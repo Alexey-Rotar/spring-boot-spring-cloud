@@ -25,7 +25,7 @@ public class BookProvider {
 //        this.eurekaClient = eurekaClient; // нужен при
     }
 
-    public UUID getRandomBookId() {
+    public Book getRandomBook() {
         Book randomBook = webClient.get()
 //                .uri("http://localhost:8580/book/random") // запрос напрямую к сервису, без Eureka!
 //                .uri(getBookServiceIp() + "/book/random")
@@ -33,7 +33,7 @@ public class BookProvider {
                 .retrieve()
                 .bodyToMono(Book.class)
                 .block();
-        return randomBook.getId();
+        return randomBook;
     }
 
 //    private String getBookServiceIp(){

@@ -5,7 +5,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.lang.module.FindException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -14,7 +13,8 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class IssueController {
     private List<Issue> list;
-    private final BookProvider provider;
+    private final BookProvider bookProvider;
+    private final ReaderProvider readerProvider;
 
     @PostConstruct
     public void generateIssue(){
@@ -23,8 +23,8 @@ public class IssueController {
         for (int i = 0; i < 15; i++) {
             Issue issue = new Issue();
             issue.setId(UUID.randomUUID());
-            issue.setIdReader(UUID.randomUUID());
-            issue.setIdBook(provider.getRandomBookId());
+            issue.setReader(readerProvider.getRandomReader());
+            issue.setBook(bookProvider.getRandomBook());
 
             list.add(issue);
         }

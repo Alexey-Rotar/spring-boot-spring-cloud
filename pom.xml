@@ -12,12 +12,13 @@
 	<artifactId>spring-boot-spring_cloud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>spring-boot-lesson-9</name>
+    <name>spring-boot-spring_cloud</name>
 	<description>Demo project for Spring Boot</description>
     <modules>
         <module>book-service</module>
 		<module>issue-service</module>
 		<module>discover-service</module>
+		<module>reader-service</module>
 	</modules>
     <properties>
 		<java.version>21</java.version>
