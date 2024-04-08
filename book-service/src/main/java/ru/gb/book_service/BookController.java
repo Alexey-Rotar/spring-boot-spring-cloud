@@ -22,6 +22,11 @@ public class BookController {
             Book book = new Book();
             book.setId(UUID.randomUUID());
             book.setName("Book: " + i);
+            Author author = new Author();
+            author.setId(UUID.randomUUID());
+            author.setFirstName("FirstName" + i);
+            author.setLastName("LastName" + i);
+            book.setAuthor(author);
 
             books.add(book);
         }

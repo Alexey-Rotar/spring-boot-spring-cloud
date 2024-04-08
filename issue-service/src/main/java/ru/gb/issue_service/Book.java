@@ -8,4 +8,5 @@ import java.util.UUID;
 public class Book {
     private UUID id;
     private String name;
+    private Author author;
 }
